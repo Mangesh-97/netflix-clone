@@ -10,8 +10,12 @@
             object-fit: cover;
             padding: 0 10px;
             box-shadow: 0 0 40px -30px #fff;
+            transition: all 0.3s ease-in-out;
         }
 
+        .owl-carousel .owl-item img:hover {
+            transform: scale(1.1);
+        }
 
 
     }
