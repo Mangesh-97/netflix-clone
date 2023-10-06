@@ -1,0 +1,37 @@
+// .modify-nav {
+//     background-color: #673ab7;
+//     // margin-top: 500px;
+//     padding: 0.5rem 1rem;
+//     // font-size: 18px; 
+// }
+
+.logo {
+    cursor: pointer;
+}
+
+img {
+    width: 120px;
+}
+
+mat-drawer-content {
+    background-color: #0e171e;
+    height: calc(100vh - 64px);
+}
+
+mat-toolbar {
+    background-color: #1b252f;
+}
+
+a {
+    color: #829a9a;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.ac {
+    color: #fff;
+}

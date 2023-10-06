@@ -1,0 +1,13 @@
+<!-- {{movie | json}} -->
+
+<div class="row mt-4" *ngIf="movie">
+    <div class="col-md-4">
+        <img [src]="'https://image.tmdb.org/t/p/w780'+ movie.poster_path" [alt]=" movie.title" [title]="movie.title"
+            class="img-fluid">
+    </div>
+    <div class="col-md-8">
+        <p class="text-white">
+            {{movie.overview}}
+        </p>
+    </div>
+</div>

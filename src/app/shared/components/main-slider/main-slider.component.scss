@@ -1,0 +1,71 @@
+::ng-deep {
+    .main-slider {
+        cursor: pointer !important;
+
+        .owl-carousel {
+            // height: calc(100vh - 90px);
+
+
+        }
+
+        .owl-carousel .owl-item img {
+            // display: block;
+            width: 100% !important;
+            height: calc(100vh - 67px);
+
+            object-fit: cover;
+            object-position: center;
+        }
+
+
+        .owl-prev {
+            position: absolute;
+            top: 22%;
+            left: 0;
+        }
+
+        .owl-next {
+            position: absolute;
+            top: 22%;
+            right: 0;
+        }
+
+
+        .owl-theme .owl-nav [class*=owl-] {
+            background: transparent;
+            padding: 130px 20px;
+
+        }
+
+        .owl-theme .owl-nav [class*=owl-]:hover,
+        .owl-theme .owl-nav [class*=owl-]:active,
+        .owl-theme .owl-nav [class*=owl-]:focus {
+            background-color: rgba($color: #000000, $alpha: 0.5);
+        }
+
+    }
+
+
+    .owl-dots.ng-star-inserted {
+        position: absolute;
+        bottom: 30px;
+        width: 100%;
+    }
+
+    .item {
+        position: relative;
+        // cursor: pointer;
+
+        &-caption {
+            position: absolute;
+            top: 40%;
+            left: 5%;
+
+            h2 {
+                font-size: 4rem;
+                text-shadow: 10px 10px 20px #000;
+                color: #fff;
+            }
+        }
+    }
+}
