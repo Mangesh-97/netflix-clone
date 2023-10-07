@@ -13,6 +13,7 @@ export class SliderComponent implements OnInit {
   @Input() popularMovies: Array<Imovie> = []
   @Input() upcomingMovies: Array<Imovie> = []
   @Input() nowPlayingMovies: Array<Imovie> = []
+  @Input() path!: string
 
   constructor(
     private _moviesService: MoviesService

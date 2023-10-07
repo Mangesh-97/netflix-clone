@@ -1,14 +1,15 @@
-<h2 *ngIf="topRatedMovies.length > 0">Top Rated Movies</h2>
-<app-slider [topRatedMovies]="topRatedMovies"></app-slider>
+<h2 *ngIf="topRatedMovies.length > 0">{{ !path.includes('tvshow') ? 'Top Rated Movies' : 'Top Rated Shows'}}</h2>
+<app-slider [topRatedMovies]="topRatedMovies" [path]="path"></app-slider>
 
 
-<h2 *ngIf="popularMovies.length > 0">Top popular Movies</h2>
-<app-slider [popularMovies]="popularMovies"></app-slider>
+<h2 *ngIf="popularMovies.length > 0">{{ !path.includes('tvshow')? 'Top Popular Movies' : 'Top Popular Shows'}}</h2>
+<app-slider [popularMovies]="popularMovies" [path]="path"></app-slider>
 
 
-<h2 *ngIf="upcomingMovies.length > 0">Top Populars Movies</h2>
-<app-slider [upcomingMovies]="upcomingMovies"></app-slider>
+<h2 *ngIf="upcomingMovies.length > 0">{{ !path.includes('tvshow')? 'Top Upcoming Movies' : 'On The Air Shows'}}</h2>
+<app-slider [upcomingMovies]="upcomingMovies" [path]="path"></app-slider>
 
 
-<h2 *ngIf="nowPlayingMovies.length > 0">Top Now Playing Movies</h2>
-<app-slider [nowPlayingMovies]="nowPlayingMovies"></app-slider>
+<h2 *ngIf="nowPlayingMovies.length > 0">{{ !path.includes('tvshow') ? 'Top Now Playing Movies' : 'Airing Today shows'}}
+</h2>
+<app-slider [nowPlayingMovies]="nowPlayingMovies" [path]="path"></app-slider>

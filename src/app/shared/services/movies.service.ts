@@ -18,15 +18,31 @@ export class MoviesService {
   ) { }
 
 
-  getLetTredMovies(): Observable<Imovie[]> {
+  // getAllLetTreding(): Observable<Imovie[]> {
+
+  //   let queryparms = new HttpParams()
+
+  //   queryparms.append('api_key', this.apiKey)
+
+  //   let trendingMovies = `${this.baseUrl}/trending/all/week?api_key=${this.apiKey}`
+  //   // let trendingMovies = `${this.baseUrl}/trending/all/week`
+  //   return this._http.get<ImovieDeatails>(trendingMovies,)
+  //     .pipe(
+  //       map(
+  //         res => res.results
+  //       )
+  //     )
+  // }
+
+
+  getAllLetTredingMovies(): Observable<any> {
 
     let queryparms = new HttpParams()
-
     queryparms.append('api_key', this.apiKey)
 
-    let trendingMovies = `${this.baseUrl}/trending/all/week?api_key=${this.apiKey}`
+    let trendingMovies = `${this.baseUrl}/trending/movie/week?api_key=${this.apiKey}`
     // let trendingMovies = `${this.baseUrl}/trending/all/week`
-    return this._http.get<ImovieDeatails>(trendingMovies,)
+    return this._http.get<any>(trendingMovies)
       .pipe(
         map(
           res => res.results

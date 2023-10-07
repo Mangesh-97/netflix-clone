@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { MoviesService } from '../../services/movies.service';
 import { Imovie } from '../../model/movies';
+import { TvshowService } from '../../services/tvshow.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-main-slider',
@@ -9,23 +11,50 @@ import { Imovie } from '../../model/movies';
   styleUrls: ['./main-slider.component.scss']
 })
 export class MainSliderComponent implements OnInit {
-  MoviesArray: Array<Imovie> = []
-
+  MoviesArray: Array<any> = []
   constructor(
-    private _moviesService: MoviesService
-
+    private _moviesService: MoviesService,
+    private _tvShowService: TvshowService,
+    private _route: ActivatedRoute
   ) { }
 
+  path!: string
   ngOnInit(): void {
-    this._moviesService.getLetTredMovies()
-      .subscribe(
-        res => {
-          // console.log(res);
+    // console.log(this.MoviesArray);
 
-          this.MoviesArray = res
+    this._route.url
+      .subscribe(res => {
+        if (res.length > 0) {
+          if (res[0].path.includes('tvshows')) {
+            // console.log(res[0].path);
+            this.path = res[0].path
+            // console.log(res.length);
+            this._tvShowService.getLetestTredShows()
+              .subscribe(res => {
+                // console.log(res);
+                this.MoviesArray = res
+              })
+          }
 
+        } else {
+          // console.log(res.length);
+          // console.log('treading movies');
+          this.path = 'movies'
+          this._moviesService.getAllLetTredingMovies()
+            .subscribe(
+              res => {
+                this.MoviesArray = res
+              }
+            )
         }
-      )
+
+
+      })
+
+
+
+
+
   }
 
 

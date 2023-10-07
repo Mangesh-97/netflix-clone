@@ -1,8 +1,8 @@
 <div class="slider">
-    <owl-carousel-o [options]="customOptions">
+    <owl-carousel-o [options]="customOptions" *ngIf="topRatedMovies.length > 0">
         <ng-container *ngFor="let movie of topRatedMovies">
             <ng-template carouselSlide>
-                <div class="item" [routerLink]="['details', movie.id]">
+                <div class="item" [routerLink]="['/details', movie.id]" [queryParams]="{content : path}">
                     <figure>
                         <img src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}" alt="Latest Movies">
                     </figure>
@@ -11,10 +11,10 @@
         </ng-container>
     </owl-carousel-o>
 
-    <owl-carousel-o [options]="customOptions">
+    <owl-carousel-o [options]="customOptions" *ngIf="popularMovies.length > 0">
         <ng-container *ngFor="let movie of popularMovies">
             <ng-template carouselSlide>
-                <div class="item" [routerLink]="['details', movie.id]">
+                <div class="item" [routerLink]="['/details', movie.id]" [queryParams]="{content : path}">
                     <figure>
                         <img src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}" alt="Latest Movies">
                     </figure>
@@ -23,10 +23,10 @@
         </ng-container>
     </owl-carousel-o>
 
-    <owl-carousel-o [options]="customOptions">
+    <owl-carousel-o [options]="customOptions" *ngIf="upcomingMovies.length > 0">
         <ng-container *ngFor="let movie of upcomingMovies">
             <ng-template carouselSlide>
-                <div class="item" [routerLink]="['details', movie.id]">
+                <div class="item" [routerLink]="['/details', movie.id]" [queryParams]="{content : path}">
                     <figure>
                         <img src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}" alt="Latest Movies">
                     </figure>
@@ -36,10 +36,10 @@
     </owl-carousel-o>
 
 
-    <owl-carousel-o [options]="customOptions">
+    <owl-carousel-o [options]="customOptions" *ngIf="nowPlayingMovies.length > 0">
         <ng-container *ngFor="let movie of nowPlayingMovies">
             <ng-template carouselSlide>
-                <div class="item" [routerLink]="['details', movie.id]">
+                <div class="item" [routerLink]="['/details', movie.id]" [queryParams]="{content : path}">
                     <figure>
                         <img src="https://image.tmdb.org/t/p/w342/{{movie.poster_path}}" alt="Latest Movies">
                     </figure>

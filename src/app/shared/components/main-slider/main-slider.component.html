@@ -1,16 +1,18 @@
-<div class="main-slider" *ngIf="MoviesArray">
+<div class="main-slider" *ngIf="MoviesArray.length > 0">
     <owl-carousel-o [options]="customOptions">
         <ng-container *ngFor="let movie of MoviesArray">
             <ng-template carouselSlide>
-                <div class="item" [routerLink]="['details', movie.id]">
+                <div class="item" [routerLink]="['/details', movie.id]" [queryParams]="{content : path}">
                     <figure>
                         <img src="https://image.tmdb.org/t/p/original/{{movie.backdrop_path}}" alt="Latest Movies">
                         <figcaption class="item-caption">
-                            <h2>{{movie.title || movie.original_name}}</h2>
+                            <h2>{{movie.title || movie.original_name}} </h2>
+
                         </figcaption>
                     </figure>
                 </div>
             </ng-template>
         </ng-container>
     </owl-carousel-o>
+
 </div>
