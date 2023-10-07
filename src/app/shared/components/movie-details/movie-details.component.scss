@@ -1,6 +1,6 @@
 .banner {
     // height: calc(100vh - 70px);
-    height: calc(100vh - 70px);
+    height: calc(100vh - 40%);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -74,4 +74,25 @@
 ::ng-deep.mat-tab-label-active {
     color: #fff !important;
     opacity: 1 !important;
+}
+
+@media screen and (max-width: 767px) {
+    .banner {
+        height: calc(100vh - 70%);
+
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-attachment: unset;
+
+        .caption {
+
+
+            h2 {
+                font-size: 1rem;
+            }
+        }
+
+
+
+    }
 }
