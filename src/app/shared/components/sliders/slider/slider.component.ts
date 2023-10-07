@@ -38,17 +38,15 @@ export class SliderComponent implements OnInit {
     navText: ['<i class="fa-solid fa-chevron-left fa-3x "></i>', '<i class="fa-solid fa-chevron-right fa-3x"></i>'],
     responsive: {
       0: {
+        items: 4
+      },
+      767: {
         items: 1
       },
-      400: {
+      1024: {
         items: 1
-      },
-      740: {
-        items: 1
-      },
-      940: {
-        items: 8
       }
+
     },
     nav: true
   }

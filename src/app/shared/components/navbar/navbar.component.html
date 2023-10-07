@@ -1,62 +1,59 @@
-<mat-toolbar class="d-flex justify-content-between align-items-center nav" mat-elevation-z11>
-    <div class=" d-flex">
-        <span class="logo" routerLink="/">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="Netflix logo"
-                title="Netflix">
-
-        </span>
-
-    </div>
-
-
-    <div class=" d-none d-lg-block">
-        <a mat-button routerLinkActive="ac" [routerLinkActiveOptions]="{exact: true}" routerLink="/">
-
-            <span>
-                Home
-            </span>
-        </a>
-        <a mat-button routerLinkActive="ac" [routerLinkActiveOptions]="{exact: true}" routerLink="/underprogress">
-
-            <span>
-                Movies
-            </span>
-        </a>
-        <a mat-button routerLinkActive="ac" [routerLinkActiveOptions]="{exact: true}" routerLink="/tvshows">
-
-            <span>
-                Tv Series
-            </span>
-        </a>
-        <!-- <a mat-button routerLinkActive="ac" [routerLinkActiveOptions]="{exact: true}" routerLink="/contact">
-
-            <span>
-                Contact
-            </span>
-        </a> -->
-
-
-
-
-
-        <!-- <mat-slide-toggle class="darkmode-btn" (input)="onDarkModeToggle($event)" [checked]="ischeked">
-
-        </mat-slide-toggle> -->
-    </div>
-
-    <div class="d-lg-none d-md-show d-sm-show">
-        <button mat-icon-button class="example-icon " aria-label="Example icon-button with menu icon"
-            (click)="sidenav.toggle()">
-            <mat-icon>{{sidenav.opened ? 'close' : 'menu'}}</mat-icon>
-        </button>
-    </div>
-</mat-toolbar>
-
-
-
-
-<mat-drawer-container hasBackdrop="true">
+<!-- <mat-drawer-container hasBackdrop="true">
     <mat-drawer mode="over" #sidenav position="end">
+
+    </mat-drawer>
+
+    <mat-drawer-content (click)="sidenav.close()">
+    </mat-drawer-content>
+</mat-drawer-container> -->
+
+
+<mat-sidenav-container fullscreen>
+
+    <mat-sidenav-content>
+        <mat-toolbar class="d-flex justify-content-between align-items-center nav" mat-elevation-z11>
+            <div class=" d-flex">
+                <span class="logo" routerLink="/">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="Netflix logo"
+                        title="Netflix">
+
+                </span>
+
+            </div>
+
+
+            <div class=" d-none d-lg-block">
+                <a mat-button routerLinkActive="ac" [routerLinkActiveOptions]="{exact: true}" routerLink="/">
+
+                    <span>
+                        Home
+                    </span>
+                </a>
+                <a mat-button routerLinkActive="ac" [routerLinkActiveOptions]="{exact: true}"
+                    routerLink="/underprogress">
+
+                    <span>
+                        Movies
+                    </span>
+                </a>
+                <a mat-button routerLinkActive="ac" [routerLinkActiveOptions]="{exact: true}" routerLink="/tvshows">
+
+                    <span>
+                        Tv Series
+                    </span>
+                </a>
+
+            </div>
+
+            <div class="d-lg-none d-md-show d-sm-show">
+                <button mat-icon-button class="text-white " (click)="sidenav.toggle()">
+                    <mat-icon>{{sidenav.opened ? 'close' : 'menu'}}</mat-icon>
+                </button>
+            </div>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+    <mat-sidenav #sidenav position="end">
         <mat-nav-list>
             <a mat-list-item (click)="sidenav.toggle()" routerLinkActive="ac2" [routerLinkActiveOptions]="{exact: true}"
                 routerLink="/">
@@ -71,7 +68,7 @@
                 routerLink="/about">
                 <mat-icon mat-list-icon>person</mat-icon>
                 <span>
-                    About
+                    Movies
                 </span>
             </a>
             <a mat-list-item (click)="sidenav.toggle()" routerLinkActive="ac2" [routerLinkActiveOptions]="{exact: true}"
@@ -82,24 +79,11 @@
                 </mat-icon>
 
                 <span>
-                    Portfolio
-                </span>
-            </a>
-            <a mat-list-item (click)="sidenav.toggle()" routerLinkActive="ac2" routerLink="/contact">
-                <mat-icon mat-list-icon>
-                    assignment
-                </mat-icon>
-
-                <span>
-                    contact
+                    Tv Shows
                 </span>
             </a>
 
 
         </mat-nav-list>
-    </mat-drawer>
-
-    <mat-drawer-content (click)="sidenav.close()">
-        <router-outlet></router-outlet>
-    </mat-drawer-content>
-</mat-drawer-container>
+    </mat-sidenav>
+</mat-sidenav-container>

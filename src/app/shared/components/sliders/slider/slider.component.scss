@@ -54,3 +54,42 @@
 
 
 }
+
+
+@media screen and (max-width: 767px) {
+    ::ng-deep {
+        .slider {
+            margin: 0px 0px;
+            cursor: pointer;
+
+            .owl-carousel .owl-item img {
+
+                height: 150px;
+                padding: 0 5px;
+                box-shadow: 0 0 40px -30px #fff;
+                transition: all 0.3s ease-in-out;
+
+            }
+
+
+
+            .owl-prev {
+                position: absolute;
+                top: 5% !important;
+            }
+
+            .owl-next {
+                position: absolute;
+                top: 5% !important;
+            }
+
+        }
+
+        .owl-theme .owl-nav [class*=owl-] {
+            padding: 50px 10px !important;
+
+        }
+    }
+
+
+}

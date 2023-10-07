@@ -44,13 +44,10 @@ export class MainSliderComponent implements OnInit {
       0: {
         items: 1
       },
-      400: {
+      767: {
         items: 1
       },
-      740: {
-        items: 1
-      },
-      940: {
+      1023: {
         items: 1,
       }
     },
