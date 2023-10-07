@@ -51,7 +51,7 @@ export class MoviesService {
     let topRatedMoviesUrl = `${this.baseUrl}/movie/top_rated?api_key=${this.apiKey}`
     return this._http.get<ImovieDeatails>(topRatedMoviesUrl)
       .pipe(
-        map(res => res.results)
+        map(res => res.results.reverse())
       )
   }
 
@@ -59,7 +59,7 @@ export class MoviesService {
     let topRatedMoviesUrl = `${this.baseUrl}/movie/popular?api_key=${this.apiKey}`
     return this._http.get<ImovieDeatails>(topRatedMoviesUrl)
       .pipe(
-        map(res => res.results)
+        map(res => res.results.reverse())
       )
   }
 
@@ -67,14 +67,14 @@ export class MoviesService {
     let topRatedMoviesUrl = `${this.baseUrl}/movie/upcoming?api_key=${this.apiKey}`
     return this._http.get<ImovieDeatails>(topRatedMoviesUrl)
       .pipe(
-        map(res => res.results)
+        map(res => res.results.reverse())
       )
   }
   getMoviePhotots(id: string): Observable<any> {
     let detailUrl = `${this.baseUrl}/movie/${id}/images?api_key=${this.apiKey}`
     return this._http.get<any>(detailUrl)
       .pipe(
-        map(res => res.backdrops)
+        map(res => res.backdrops.reverse())
       )
   }
   // now_playing
@@ -83,7 +83,7 @@ export class MoviesService {
     let topRatedMoviesUrl = `${this.baseUrl}/movie/now_playing?api_key=${this.apiKey}`
     return this._http.get<ImovieDeatails>(topRatedMoviesUrl)
       .pipe(
-        map(res => res.results)
+        map(res => res.results.reverse())
       )
   }
 }
