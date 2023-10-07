@@ -41,3 +41,11 @@ mat-nav-list {
         color: white;
     }
 }
+
+
+@media screen and (max-width: 767px) {
+    .logo {
+        cursor: pointer;
+        margin-left: 5px;
+    }
+}
