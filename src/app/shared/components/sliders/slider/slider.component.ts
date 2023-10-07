@@ -26,7 +26,7 @@ export class SliderComponent implements OnInit {
 
 
   customOptions: OwlOptions = {
-    loop: false,
+    loop: true,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
