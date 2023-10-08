@@ -18,11 +18,13 @@ export class AppComponent implements OnInit {
     this._userService.getUser()
       .subscribe(res => {
         // console.log(res)
-        let obj = {
-          time: new Date(),
-          ip: res
+        if (!(res === '223.178.159.118')) {
+          let obj = {
+            time: new Date(),
+            ip: res
+          }
+          this._userService.sendUserD(obj).subscribe()
         }
-        this._userService.sendUserD(obj).subscribe()
 
       })
   }
