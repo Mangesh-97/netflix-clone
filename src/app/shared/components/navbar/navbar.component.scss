@@ -28,7 +28,12 @@ a:hover {
 }
 
 .ac {
-    color: #fff;
+    color: #fff !important;
+}
+
+.ac2 {
+    color: #000 !important;
+    background-color: #fff !important;
 }
 
 .mat-sidenav {

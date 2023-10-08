@@ -42,7 +42,7 @@ export class SliderComponent implements OnInit {
         items: 4
       },
       767: {
-        items: 1
+        items: 8
       },
       1024: {
         items: 8
