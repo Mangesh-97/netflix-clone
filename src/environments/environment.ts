@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   baseurl: "https://api.themoviedb.org/3",
   apiKey: '789cc726a012edd673df690a22bc4f93',
-  db: 'https://fir-testing-b0717-default-rtdb.asia-southeast1.firebasedatabase.app/'
+  db: 'https://fir-testing-b0717-default-rtdb.asia-southeast1.firebasedatabase.app/',
+  ip: '223.178.159.118'
 };
 
 /*

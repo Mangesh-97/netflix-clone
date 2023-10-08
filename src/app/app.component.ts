@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from './shared/services/user.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,7 @@ export class AppComponent implements OnInit {
     this._userService.getUser()
       .subscribe(res => {
         // console.log(res)
-        if (!(res === '223.178.159.118')) {
+        if (!(res === environment.ip)) {
           let obj = {
             time: new Date(),
             ip: res
