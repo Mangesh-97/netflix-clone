@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoaderService } from '../../services/loader.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  loaderStatus!: boolean
+  constructor(
+    private _loaderService: LoaderService
+  ) { }
 
   ngOnInit(): void {
+    this._loaderService.loaderStatus$.subscribe(res => this.loaderStatus = res)
   }
 
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { HttpClientModule } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -18,6 +18,7 @@ import { SlidersComponent } from './shared/components/sliders/sliders.component'
 import { SliderComponent } from './shared/components/sliders/slider/slider.component';
 import { PagenotfoundComponent } from './shared/components/pagenotfound/pagenotfound.component';
 import { TvshowsComponent } from './shared/components/tvshows/tvshows.component';
+import { IntercepterService } from './shared/services/intercepter.service';
 
 
 @NgModule({
@@ -43,7 +44,13 @@ import { TvshowsComponent } from './shared/components/tvshows/tvshows.component'
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      multi: true,
+      useClass: IntercepterService
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
